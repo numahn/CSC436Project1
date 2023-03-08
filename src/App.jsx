@@ -6,7 +6,6 @@ function App() {
 
   const [res, setRes] = useState()
   const [time, setTime] = useState("")
-  const [local, setLocal] = useState("")
 
   const getData = async () => {
     axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
