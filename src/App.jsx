@@ -27,11 +27,10 @@ function App() {
       
       {res? <Navbar res={res}/> : null}
       <br></br>
-      <div id="output">Conversion:</div>
-      <div className="time-zone">
+      {/* <div className="time-zone">
         <p>Time: {time}</p>
         <p>Local: {new Date(time).toString()}</p>
-      </div>
+      </div> */}
     </>
   )
 }
