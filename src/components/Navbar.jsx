@@ -70,11 +70,6 @@ export default function Navbar({res, time}) {
 
     const [section, setSection] = useState(true)
 
-
-    useEffect(() => {
-        console.log(time)
-    }, [])
-
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -88,19 +83,17 @@ export default function Navbar({res, time}) {
                             <a className="nav-link active" aria-current="page" onClick={() => setSection(true)}>Current BTC Rates</a>
                             </li>
                             <li className="nav-item">
-                            <a className="nav-link" onClick={() => setSection(false)}>Custom Conversions</a>
+                            <a className="nav-link active" onClick={() => setSection(false)}>Custom Conversions</a>
                             </li>
                             <li className="nav-item time">
-                                <a className="nav-link">Time: {time}</a>
-                            </li>
-                            <li className="nav-item time">
-                                <a className="nav-link">Local: {new Date(time).toString()}</a>
+                                <a className="nav-link">Time: {time.regular}</a>
+                                <a className="nav-link">Local: {new Date(time.regular).toString()}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            {section ? <Conversion res={res}/>:
+            {section ? <Conversion res={res} time={time}/>:
             <CustomConversion res={res}/>
             }
         </>

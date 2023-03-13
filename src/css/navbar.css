@@ -6,4 +6,11 @@
 .time{
     user-select: none;
     cursor: auto;
+    display: flex;
+    flex-direction: flex-end;
+    opacity: 60%;
+}
+
+.active{
+    font-weight: 600;
 }

@@ -5,13 +5,13 @@ import Navbar from './components/Navbar'
 function App() {
 
   const [res, setRes] = useState()
-  const [time, setTime] = useState("")
+  const [time, setTime] = useState({})
 
   const getData = async () => {
     axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
     .then((response) => {
       setRes(response.data.bpi)
-      setTime(response.data.time.updated)
+      setTime({regular: response.data.time.updated, iso: response.data.time.updatedISO})
     }).catch((err) => {
       console.log(err)
     })

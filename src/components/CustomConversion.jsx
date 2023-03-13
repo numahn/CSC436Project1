@@ -15,13 +15,13 @@ export default function CustomConversion({res}) {
         setCurr(inputCurr)
         switch(inputCurr){
             case "USD":
-                area.innerHTML = "Conversion: " + (inputValue/ res.USD.rate_float).toFixed(9)
+                area.innerHTML = "Conversion: " + (inputValue/ res.USD.rate_float).toFixed(9) + " BTC"
                 break
             case "GBP":
-                area.innerHTML = "Conversion: " + (inputValue/ res.GBP.rate_float).toFixed(9)
+                area.innerHTML = "Conversion: " + (inputValue/ res.GBP.rate_float).toFixed(9) + " BTC"
                 break
             case "EUR":
-                area.innerHTML = "Conversion: " + (inputValue/ res.EUR.rate_float).toFixed(9)
+                area.innerHTML = "Conversion: " + (inputValue/ res.EUR.rate_float).toFixed(9) + " BTC"
                 break
         }
     }

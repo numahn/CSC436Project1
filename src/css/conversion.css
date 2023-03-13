@@ -9,7 +9,12 @@
     border-radius: 5px;
 }
 
-.flip-button{
+.button{
     margin-top: 25px;
     min-width: 200px;
+    padding-right: 5px;
+}
+
+.flip{
+    margin-right: 5px;
 }
