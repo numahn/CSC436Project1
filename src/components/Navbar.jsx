@@ -65,6 +65,7 @@
 import React, { useState } from 'react'
 import "../css/navbar.css"
 import Conversion from './Conversion'
+import CustomConversion from './CustomConversion'
 export default function Navbar({res}) {
 
     const [section, setSection] = useState(true)
@@ -88,7 +89,7 @@ export default function Navbar({res}) {
                 </div>
             </nav>
             {section ? <Conversion res={res}/>:
-            null
+            <CustomConversion res={res}/>
             }
 
         </>
