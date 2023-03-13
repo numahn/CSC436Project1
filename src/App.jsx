@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       
-      {res? <Navbar res={res}/> : null}
+      {res? <Navbar res={res} time={time}/> : null}
       <br></br>
       {/* <div className="time-zone">
         <p>Time: {time}</p>

@@ -62,13 +62,19 @@
 
 //New
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "../css/navbar.css"
 import Conversion from './Conversion'
 import CustomConversion from './CustomConversion'
-export default function Navbar({res}) {
+export default function Navbar({res, time}) {
 
     const [section, setSection] = useState(true)
+
+
+    useEffect(() => {
+        console.log(time)
+    }, [])
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -84,6 +90,12 @@ export default function Navbar({res}) {
                             <li className="nav-item">
                             <a className="nav-link" onClick={() => setSection(false)}>Custom Conversions</a>
                             </li>
+                            <li className="nav-item time">
+                                <a className="nav-link">Time: {time}</a>
+                            </li>
+                            <li className="nav-item time">
+                                <a className="nav-link">Local: {new Date(time).toString()}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -91,7 +103,6 @@ export default function Navbar({res}) {
             {section ? <Conversion res={res}/>:
             <CustomConversion res={res}/>
             }
-
         </>
         
     )
