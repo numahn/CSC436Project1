@@ -26,11 +26,6 @@ function App() {
     <>
       
       {res? <Navbar res={res} time={time}/> : null}
-      <br></br>
-      {/* <div className="time-zone">
-        <p>Time: {time}</p>
-        <p>Local: {new Date(time).toString()}</p>
-      </div> */}
     </>
   )
 }

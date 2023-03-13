@@ -23,14 +23,12 @@ export default function Conversion({res, time}) {
 
     const getData = () => {
         const lastCall = new Date()
-        if(lastCall && lastCall - new Date(time.iso) < 1 * 60 * 1000){
+        if(lastCall && lastCall - new Date(time.iso) < 5 * 60 * 1000){
             alert("You must wait 5 minutes after each call.")
         }
         else{
             axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
             .then((response) => {
-            //   setRes(response.data.bpi)
-            //   setTime({regular: response.data.time.updated, iso: response.data.time.updatedISO})
             setResArr([{code: response.data.bpi.USD.code, rate: response.data.bpi.USD.rate_float},
                 {code: response.data.bpi.GBP.code, rate: response.data.bpi.GBP.rate_float},
                 {code: response.data.bpi.EUR.code, rate: response.data.bpi.EUR.rate_float}
