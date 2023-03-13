@@ -23,10 +23,11 @@ export default function Conversion({res, time}) {
 
     const getData = () => {
         const lastCall = new Date()
-        if(lastCall && lastCall - new Date(time.iso) < 5 * 60 * 1000){
+        if(lastCall && lastCall - new Date(time.iso) < 5 * 60 * 1000){ //Compares the last call by the api call to see if it was 5 minutes ago
             alert("You must wait 5 minutes after each call.")
         }
         else{
+            //call api again here and change resArr, maybe could reduce redundancy here
             axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
             .then((response) => {
             setResArr([{code: response.data.bpi.USD.code, rate: response.data.bpi.USD.rate_float},

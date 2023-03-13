@@ -29,6 +29,7 @@ export default function Navbar({res, time}) {
                     </div>
                 </div>
             </nav>
+            {/*One section would appear, depending on which you click on*/}
             {section ? <Conversion res={res} time={time}/>:
             <CustomConversion res={res}/>
             }

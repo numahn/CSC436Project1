@@ -8,12 +8,14 @@ export default function CustomConversion({res}) {
 
     const onSubmit = (e) => {
         e.preventDefault()
+        //take forms value and also dropdowns value, as they are separated (probably another way to do this)
         let inputValue = e.target[0].value
         let inputCurr = document.getElementById('currency').value
         const area = document.getElementsByClassName("output")[0]
         setValue(inputValue)
         setCurr(inputCurr)
         switch(inputCurr){
+            //Change innerHTML of output
             case "USD":
                 area.innerHTML = "Conversion: " + (inputValue/ res.USD.rate_float).toFixed(9) + " BTC"
                 break
