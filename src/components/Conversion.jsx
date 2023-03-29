@@ -58,9 +58,9 @@ export default function Conversion({ res, time }) {
 		<>
 			<div className="conversion-container">
 				<p className="title">1 BTC:</p>
-				{resArr.map((rate) => {
+				{resArr.map((rate, i) => {
 					return (
-						<div className="section">
+						<div className="section" key={i}>
 							{rate.rate.toFixed(2)} {rate.code} (1 {rate.code}:{' '}
 							{(1 / rate.rate).toFixed(6)} BTC)
 						</div>
